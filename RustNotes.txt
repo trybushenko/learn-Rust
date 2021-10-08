@@ -1,0 +1,94 @@
+1) all variables in Rust are immutable 
+    let x = 5;
+2) create mutable variable
+    let mut x = 5;
+3) Explicitly declaring of data types
+    let my_name: &str = "Ryan"; 
+4) explicit declaring of boolean data type
+    let answer: bool = true;
+
+Rust’s basic types are:
+    -Integer: Whole numbers
+    -Float: Numbers with decimal places
+    -Boolean: binary true or false
+    -String: collections of characters 
+     enclosed in quotation marks
+    -Char: A Unicode scalar value that 
+     represents a specific character
+    -Never: a type with no value, marked by !
+
+All main commands with cargo:
+-We can build a project using cargo build.
+-We can build and run a project in one step using cargo run.
+-We can build a project without producing 
+a binary to check for errors using cargo check.
+-Instead of saving the result of the build in 
+the same directory as our code, Cargo stores it in the target/debug directory.
+-When your project is finally ready for release, 
+you can use cargo build --release to compile it with optimizations.
+
+In Rust, variables are immutable by default.
+    let num apples = 5; - creates mutable variable
+
+io::Result
+For Result, the variants are Ok or Err. 
+The Ok variant indicates the operation was successful, 
+and inside Ok is the successfully generated value. 
+The Err variant means the operation failed, 
+and Err contains information about how or why the operation failed.
+
+Formatting of text
+    println!("x = {} and y = {}", x, y);
+
+rand::thread_rng().gen_range(1..101); - from scope rand get object thread_rng random generator 
+and method gen_range that generates random number from 1 to 100. It’s inclusive on the lower bound 
+but exclusive on the upper bound
+
+You declare constants using the const keyword instead of the let keyword, 
+and the type of the value MUST be annotated.
+
+Shadowing:
+        fn main() {
+            let x = 5;
+
+            let x = x + 1;
+
+            let x = x * 2;
+
+            println!("The value of x is: {}", x);
+        }
+
+Shadowing differs from reassigning the variable, 
+because while reassigning or changing the mutable 
+variable we can't change the type of variable, 
+while during shadwing we can!
+
+To get the certain value of list or tuple in Rust just call 
+    array.0
+
+declaring lists:
+    let a: [i32; 5] = [1, 2, 3, 4, 5]; - it creates a list with 5 values with i32 data types
+    let a = [3; 5]; - the array named a will contain 5 elements that will all be set to the value 3 initially. 
+
+
+    Rust doesn’t care where you define your functions, only that they’re defined somewhere.
+
+let y = {
+        let x = 3;
+        x + 1 - returns the value of x + 1. Must-have to write without semicolon!
+    };
+
+Conditions 
+It’s also worth noting that the condition in this code must be a bool.
+        fn main() {
+            let number = 3;
+
+            if number { // should be number == 3;
+                println!("number was three");
+            }
+        } raises error because condition should be boolean, not int;
+
+There are expressions and statements:   
+    Statements are instructions that perform some action and do not return a value. 
+    Expressions evaluate to a resulting value.
+
